@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net8.0</TargetFrameworks>
+        <SignAssembly>true</SignAssembly>
+        <DelaySign>false</DelaySign>
+        <AssemblyOriginatorKeyFile>..\..\AssemblyOriginatorKeyFile.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyName>VRPayment</AssemblyName>
+        <AssemblyTitle>VR Payment SDK for C#</AssemblyTitle>
+        <Authors>wallee AG</Authors>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <Company>wallee AG</Company>
+        <Copyright>Apache-2.0</Copyright>
+        <Description>VR Payment SDK for C#</Description>
+        <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+        <PackageId>VRPayment</PackageId>
+        <PackageLicense>https://www.apache.org/licenses/LICENSE-2.0.txt</PackageLicense>
+        <PackageProjectUrl>https://github.com/vr-payment/csharp-sdk</PackageProjectUrl>
+        <PackageVersion>9.0.0</PackageVersion>
+        <Version>9.0.0</Version>
+        <PackageTags>VRPayment;payment;sdk;Payment Integration</PackageTags>
+        <OutputType>Library</OutputType>
+        <Owners>customweb</Owners>
+        <ReleaseVersion>9.0.0</ReleaseVersion>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/vr-payment/csharp-sdk.git</RepositoryUrl>
+        <RootNamespace>VRPayment</RootNamespace>
+        <Summary>VR Payment SDK for C#</Summary>
+        <SynchReleaseVersion>false</SynchReleaseVersion>
+        <Title>VRPayment</Title>
+    </PropertyGroup>
+    <PropertyGroup>
+        <NoWarn>CS0472</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="RestSharp" Version="112.1.0"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="JsonSubTypes" Version="2.0.1"/>
+        <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0"/>
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.1"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="System.ComponentModel.DataAnnotations"/>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Runtime.Serialization"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+
+</Project>
