@@ -70,6 +70,7 @@ namespace VRPayment.Model
 
 
 
+
         /// <summary>
         /// A client-generated nonce which uniquely identifies some action to be executed. Subsequent requests with the same external ID do not execute the action again, but return the original result.
         /// </summary>
@@ -88,6 +89,7 @@ namespace VRPayment.Model
             sb.Append("class PaymentLinkCreate {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  AllowedPaymentMethodConfigurations: ").Append(AllowedPaymentMethodConfigurations).Append("\n");
+            sb.Append("  AllowedRedirectionDomains: ").Append(AllowedRedirectionDomains).Append("\n");
             sb.Append("  AppliedSpaceView: ").Append(AppliedSpaceView).Append("\n");
             sb.Append("  AvailableFrom: ").Append(AvailableFrom).Append("\n");
             sb.Append("  AvailableUntil: ").Append(AvailableUntil).Append("\n");
@@ -140,6 +142,12 @@ namespace VRPayment.Model
                     this.AllowedPaymentMethodConfigurations != null &&
                     input.AllowedPaymentMethodConfigurations != null &&
                     this.AllowedPaymentMethodConfigurations.SequenceEqual(input.AllowedPaymentMethodConfigurations)
+                ) && base.Equals(input) && 
+                (
+                    this.AllowedRedirectionDomains == input.AllowedRedirectionDomains ||
+                    this.AllowedRedirectionDomains != null &&
+                    input.AllowedRedirectionDomains != null &&
+                    this.AllowedRedirectionDomains.SequenceEqual(input.AllowedRedirectionDomains)
                 ) && base.Equals(input) && 
                 (
                     this.AppliedSpaceView == input.AppliedSpaceView ||
@@ -220,6 +228,8 @@ namespace VRPayment.Model
                 int hashCode = base.GetHashCode();
                 if (this.AllowedPaymentMethodConfigurations != null)
                     hashCode = hashCode * 59 + this.AllowedPaymentMethodConfigurations.GetHashCode();
+                if (this.AllowedRedirectionDomains != null)
+                    hashCode = hashCode * 59 + this.AllowedRedirectionDomains.GetHashCode();
                 if (this.AppliedSpaceView != null)
                     hashCode = hashCode * 59 + this.AppliedSpaceView.GetHashCode();
                 if (this.AvailableFrom != null)

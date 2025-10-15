@@ -21,7 +21,7 @@ namespace VRPayment.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "9.0.0";
+        public const string Version = "9.1.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -94,7 +94,7 @@ namespace VRPayment.Client
             _authenticationKey =  authenticationKey;
             _applicationUserID = applicationUserID;
             _restClientOptions = restClientOptions;
-            UserAgent = "VRPayment/9.0.0/csharp";
+            UserAgent = "VRPayment/9.1.0/csharp";
             BasePath = "https://gateway.vr-payment.de:443/api";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -355,8 +355,8 @@ namespace VRPayment.Client
             String report = "C# SDK (VRPayment) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
-            report += "    Version of the API: 9.0.0\n";
-            report += "    SDK Package Version: 9.0.0\n";
+            report += "    Version of the API: 9.1.0\n";
+            report += "    SDK Package Version: 9.1.0\n";
 
             return report;
         }

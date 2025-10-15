@@ -32,13 +32,13 @@ Install-Package BouncyCastle.Cryptography
 ## Installation
 ```
 # Package Manager
-Install-Package VRPayment -Version 9.0.0
+Install-Package VRPayment -Version 9.1.0
 # .NET CLI
-dotnet add package VRPayment --version 9.0.0
+dotnet add package VRPayment --version 9.1.0
 # Paket CLI
-paket add VRPayment --version 9.0.0
+paket add VRPayment --version 9.1.0
 # PackageReference
-<PackageReference Include="VRPayment" Version="9.0.0" />
+<PackageReference Include="VRPayment" Version="9.1.0" />
 ```
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:

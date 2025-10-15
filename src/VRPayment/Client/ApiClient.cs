@@ -156,7 +156,7 @@ namespace VRPayment.Client
         {
 
             Dictionary<String, String> defaultHeaderParams = new Dictionary<String, String>() {
-                {"x-meta-sdk-version", "9.0.0"},
+                {"x-meta-sdk-version", "9.1.0"},
                 {"x-meta-sdk-language", "csharp"},
                 {"x-meta-sdk-provider", "VR Payment"},
                 {"x-meta-sdk-language-version", Environment.Version.ToString()}

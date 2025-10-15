@@ -47,6 +47,13 @@ namespace VRPayment.Model
         public List<PaymentMethodConfiguration> AllowedPaymentMethodConfigurations { get; set; }
 
         /// <summary>
+        /// The domains to which the user is allowed to be redirected after the payment is completed. The following options can be configured: Exact domain: enter a full domain, e.g. (https://example.com). Wildcard domain: use to allow subdomains, e.g. (https://_*.example.com). All domains: use (ALL) to allow redirection to any domain (not recommended for security reasons). No domains : use (NONE) to disallow any redirection. Only one option per line is allowed. Invalid entries will be rejected. 
+        /// </summary>
+        /// <value>The domains to which the user is allowed to be redirected after the payment is completed. The following options can be configured: Exact domain: enter a full domain, e.g. (https://example.com). Wildcard domain: use to allow subdomains, e.g. (https://_*.example.com). All domains: use (ALL) to allow redirection to any domain (not recommended for security reasons). No domains : use (NONE) to disallow any redirection. Only one option per line is allowed. Invalid entries will be rejected. </value>
+        [DataMember(Name="allowedRedirectionDomains", EmitDefaultValue=false)]
+        public List<string> AllowedRedirectionDomains { get; set; }
+
+        /// <summary>
         /// The payment link can be used within a specific space view, which may apply a customized design to the payment page.
         /// </summary>
         /// <value>The payment link can be used within a specific space view, which may apply a customized design to the payment page.</value>
@@ -113,6 +120,7 @@ namespace VRPayment.Model
             var sb = new StringBuilder();
             sb.Append("class AbstractPaymentLinkUpdate {\n");
             sb.Append("  AllowedPaymentMethodConfigurations: ").Append(AllowedPaymentMethodConfigurations).Append("\n");
+            sb.Append("  AllowedRedirectionDomains: ").Append(AllowedRedirectionDomains).Append("\n");
             sb.Append("  AppliedSpaceView: ").Append(AppliedSpaceView).Append("\n");
             sb.Append("  AvailableFrom: ").Append(AvailableFrom).Append("\n");
             sb.Append("  AvailableUntil: ").Append(AvailableUntil).Append("\n");
@@ -162,6 +170,12 @@ namespace VRPayment.Model
                     this.AllowedPaymentMethodConfigurations != null &&
                     input.AllowedPaymentMethodConfigurations != null &&
                     this.AllowedPaymentMethodConfigurations.SequenceEqual(input.AllowedPaymentMethodConfigurations)
+                ) && 
+                (
+                    this.AllowedRedirectionDomains == input.AllowedRedirectionDomains ||
+                    this.AllowedRedirectionDomains != null &&
+                    input.AllowedRedirectionDomains != null &&
+                    this.AllowedRedirectionDomains.SequenceEqual(input.AllowedRedirectionDomains)
                 ) && 
                 (
                     this.AppliedSpaceView == input.AppliedSpaceView ||
@@ -227,6 +241,8 @@ namespace VRPayment.Model
                 int hashCode = 41;
                 if (this.AllowedPaymentMethodConfigurations != null)
                     hashCode = hashCode * 59 + this.AllowedPaymentMethodConfigurations.GetHashCode();
+                if (this.AllowedRedirectionDomains != null)
+                    hashCode = hashCode * 59 + this.AllowedRedirectionDomains.GetHashCode();
                 if (this.AppliedSpaceView != null)
                     hashCode = hashCode * 59 + this.AppliedSpaceView.GetHashCode();
                 if (this.AvailableFrom != null)
