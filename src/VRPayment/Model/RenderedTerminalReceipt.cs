@@ -47,7 +47,7 @@ namespace VRPayment.Model
         /// Initializes a new instance of the <see cref="RenderedTerminalReceipt" /> class.
         /// </summary>
         /// <param name="receiptType">receiptType.</param>
-        public RenderedTerminalReceipt(PaymentTerminalReceiptType receiptType = default(PaymentTerminalReceiptType))
+        public RenderedTerminalReceipt(PaymentTerminalReceiptType receiptType = default)
         {
             this.ReceiptType = receiptType;
         }

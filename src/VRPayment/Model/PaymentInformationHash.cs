@@ -47,7 +47,7 @@ namespace VRPayment.Model
         /// Initializes a new instance of the <see cref="PaymentInformationHash" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        public PaymentInformationHash(PaymentInformationHashType type = default(PaymentInformationHashType))
+        public PaymentInformationHash(PaymentInformationHashType type = default)
         {
             this.Type = type;
         }

@@ -58322,6 +58322,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -59360,6 +59361,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -59575,6 +59577,7 @@ components:
               salutation: salutation
             location:
               linkedSpaceId: 8
+              productionMerchantId: productionMerchantId
               name: name
               plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
               externalId: externalId
@@ -60644,6 +60647,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -61503,6 +61507,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -62169,6 +62174,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -62724,6 +62730,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -63230,6 +63237,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -63715,6 +63723,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -64440,6 +64449,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -64995,6 +65005,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -65501,6 +65512,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -65986,6 +65998,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -67696,6 +67709,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -68516,6 +68530,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -69572,6 +69587,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -74978,6 +74994,7 @@ components:
             salutation: salutation
           location:
             linkedSpaceId: 8
+            productionMerchantId: productionMerchantId
             name: name
             plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
             externalId: externalId
@@ -75458,6 +75475,7 @@ components:
     PaymentTerminalLocation:
       example:
         linkedSpaceId: 8
+        productionMerchantId: productionMerchantId
         name: name
         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
         externalId: externalId
@@ -75473,6 +75491,13 @@ components:
           readOnly: true
           title: Linked Space ID
           type: integer
+        productionMerchantId:
+          maxLength: 15
+          minLength: 15
+          pattern: "([0-9a-zA-Z])+"
+          readOnly: true
+          title: Production Merchant Id
+          type: string
         name:
           description: The name used to identify the payment terminal location.
           maxLength: 100
@@ -75559,6 +75584,7 @@ components:
           salutation: salutation
         location:
           linkedSpaceId: 8
+          productionMerchantId: productionMerchantId
           name: name
           plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
           externalId: externalId
@@ -77530,6 +77556,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -78664,6 +78691,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -79553,6 +79581,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -80592,6 +80621,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -83887,6 +83917,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -88560,6 +88591,7 @@ components:
               salutation: salutation
             location:
               linkedSpaceId: 8
+              productionMerchantId: productionMerchantId
               name: name
               plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
               externalId: externalId
@@ -89590,6 +89622,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -90382,6 +90415,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -91760,6 +91794,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -93022,6 +93057,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -94361,6 +94397,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -95198,6 +95235,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -97913,6 +97951,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -98128,6 +98167,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -99306,6 +99346,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -99521,6 +99562,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -100728,6 +100770,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -100943,6 +100986,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -102121,6 +102165,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -102336,6 +102381,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -103275,6 +103321,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -104134,6 +104181,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -104820,6 +104868,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -105679,6 +105728,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -106394,6 +106444,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -107253,6 +107304,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -107939,6 +107991,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -108798,6 +108851,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -109342,6 +109396,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -109897,6 +109952,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -110403,6 +110459,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -110888,6 +110945,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -111397,6 +111455,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -111952,6 +112011,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -112458,6 +112518,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -112943,6 +113004,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -113481,6 +113543,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -114036,6 +114099,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -114542,6 +114606,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -115027,6 +115092,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -115536,6 +115602,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -116091,6 +116158,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -116597,6 +116665,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -117082,6 +117151,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -117625,6 +117695,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -118180,6 +118251,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -118686,6 +118758,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -119171,6 +119244,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -119676,6 +119750,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -120231,6 +120306,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -120737,6 +120813,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -121222,6 +121299,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -121756,6 +121834,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -122311,6 +122390,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -122817,6 +122897,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -123302,6 +123383,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -123807,6 +123889,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -124362,6 +124445,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -124868,6 +124952,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -125353,6 +125438,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -127266,6 +127352,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -128086,6 +128173,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -128770,6 +128858,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -129590,6 +129679,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -130303,6 +130393,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -131123,6 +131214,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -131807,6 +131899,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -132627,6 +132720,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -133760,6 +133854,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -134903,6 +134998,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -136075,6 +136171,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -137218,6 +137315,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -142416,6 +142514,7 @@ components:
               salutation: salutation
             location:
               linkedSpaceId: 8
+              productionMerchantId: productionMerchantId
               name: name
               plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
               externalId: externalId
@@ -142509,6 +142608,7 @@ components:
               salutation: salutation
             location:
               linkedSpaceId: 8
+              productionMerchantId: productionMerchantId
               name: name
               plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
               externalId: externalId
@@ -142631,6 +142731,7 @@ components:
               salutation: salutation
             location:
               linkedSpaceId: 8
+              productionMerchantId: productionMerchantId
               name: name
               plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
               externalId: externalId
@@ -142724,6 +142825,7 @@ components:
               salutation: salutation
             location:
               linkedSpaceId: 8
+              productionMerchantId: productionMerchantId
               name: name
               plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
               externalId: externalId
@@ -143747,6 +143849,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -144620,6 +144723,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -145522,6 +145626,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -146395,6 +146500,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -147255,6 +147361,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -148079,6 +148186,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -148932,6 +149040,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -149756,6 +149865,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -150722,6 +150832,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -151652,6 +151763,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -152611,6 +152723,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -153541,6 +153654,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -154391,6 +154505,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -155205,6 +155320,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -156048,6 +156164,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -156862,6 +156979,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -159588,6 +159706,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -160320,6 +160439,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -161081,6 +161201,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -161813,6 +161934,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -168008,6 +168130,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -169121,6 +169244,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -174431,6 +174555,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -174925,6 +175050,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -175448,6 +175574,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -175942,6 +176069,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -176661,6 +176789,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -177662,6 +177791,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -178692,6 +178822,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -179693,6 +179824,7 @@ components:
                     salutation: salutation
                   location:
                     linkedSpaceId: 8
+                    productionMerchantId: productionMerchantId
                     name: name
                     plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                     externalId: externalId
@@ -180739,6 +180871,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -181862,6 +181995,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -183014,6 +183148,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -184137,6 +184272,7 @@ components:
                         salutation: salutation
                       location:
                         linkedSpaceId: 8
+                        productionMerchantId: productionMerchantId
                         name: name
                         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                         externalId: externalId
@@ -185288,6 +185424,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -186401,6 +186538,7 @@ components:
                       salutation: salutation
                     location:
                       linkedSpaceId: 8
+                      productionMerchantId: productionMerchantId
                       name: name
                       plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                       externalId: externalId
@@ -187541,6 +187679,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -188223,6 +188362,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -188934,6 +189074,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -189616,6 +189757,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -190136,6 +190278,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -190620,6 +190763,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -191180,6 +191324,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -191664,6 +191809,7 @@ components:
                 salutation: salutation
               location:
                 linkedSpaceId: 8
+                productionMerchantId: productionMerchantId
                 name: name
                 plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                 externalId: externalId
@@ -192322,6 +192468,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -192945,6 +193092,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -193597,6 +193745,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
@@ -194220,6 +194369,7 @@ components:
                   salutation: salutation
                 location:
                   linkedSpaceId: 8
+                  productionMerchantId: productionMerchantId
                   name: name
                   plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
                   externalId: externalId
