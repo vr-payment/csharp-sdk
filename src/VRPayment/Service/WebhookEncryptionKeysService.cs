@@ -259,7 +259,7 @@ namespace VRPayment.Service
                         if (string.IsNullOrEmpty(publicKey))
                         {
                             throw new VRPaymentSdkException(
-                                ErrorCode.UNKNOWN_WEBHOOK_ENCRYPTION_PUBLIC_KEY,
+                                SdkExceptionErrorCodes.UNKNOWN_WEBHOOK_ENCRYPTION_PUBLIC_KEY,
                                 $"Public key not found for ID: {publicKeyId}");
                         }
 
@@ -270,7 +270,7 @@ namespace VRPayment.Service
                 }
 
                 throw new VRPaymentSdkException(
-                    ErrorCode.INVALID_WEBHOOK_ENCRYPTION_HEADER_FORMAT,
+                    SdkExceptionErrorCodes.INVALID_WEBHOOK_ENCRYPTION_HEADER_FORMAT,
                     "Invalid webhook signature header. Expected format: 'algorithm=<algorithm>, keyId=<keyId>, signature=<signature>'");
             }
 

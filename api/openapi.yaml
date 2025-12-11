@@ -7,9 +7,9 @@ info:
 servers:
 - url: https://gateway.vr-payment.de/api/v2.0
 security:
-- cookieAuth: []
 - jwtAuth: []
 - macAuth: []
+- cookieAuth: []
 tags:
 - externalDocs:
     url: https://gateway.vr-payment.de/doc/api/web-service#accounts-service
@@ -137,6 +137,9 @@ tags:
 - externalDocs:
     url: https://gateway.vr-payment.de/doc/api/web-service#payment-sales-channels-service
   name: PaymentSalesChannels
+- externalDocs:
+    url: https://gateway.vr-payment.de/doc/api/web-service#payment-terminal-transaction-summaries-service
+  name: PaymentTerminalTransactionSummaries
 - externalDocs:
     url: https://gateway.vr-payment.de/doc/api/web-service#payment-terminals-service
   name: PaymentTerminals
@@ -24104,6 +24107,506 @@ paths:
       summary: Unlink any device from a payment terminal
       tags:
       - PaymentTerminals
+  /payment/terminals/transaction-summaries:
+    get:
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#getPaymentTerminalsTransactionSummaries
+      operationId: getPaymentTerminalsTransactionSummaries
+      parameters:
+      - description: Set to an object's ID to retrieve the page of objects coming
+          immediately after the named object.
+        explode: true
+        in: query
+        name: after
+        required: false
+        schema:
+          format: int64
+          minimum: 1
+          type: integer
+        style: form
+      - description: Set to an object's ID to retrieve the page of objects coming
+          immediately before the named object.
+        explode: true
+        in: query
+        name: before
+        required: false
+        schema:
+          format: int64
+          minimum: 1
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: expand
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: "A limit on the number of objects to be returned, between 1 and\
+          \ 100. Default is 10."
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      - description: Specify to retrieve objects in chronological (ASC) or reverse
+          chronological (DESC) order.
+        explode: true
+        in: query
+        name: order
+        required: false
+        schema:
+          $ref: "#/components/schemas/SortingOrder"
+        style: form
+      - description: Specifies the ID of the space the operation should be executed
+          in.
+        explode: false
+        in: header
+        name: Space
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Terminal_Transaction_Summary_List_Response"
+          description: Successful response.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request was not accepted often due to missing or invalid
+            parameters.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The necessary authentication credentials are missing or incorrect.
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The application user is missing the required permissions.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested resource was not found.
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested response format is not supported.
+        "415":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request provides unsupported or invalid data.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request is well-formed but contains semantic errors. Check
+            the response body for details.
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Too many requests hit the API too quickly.
+        "5XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: An internal error occurred on the server.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Error response.
+      summary: List all summaries
+      tags:
+      - PaymentTerminalTransactionSummaries
+  /payment/terminals/transaction-summaries/{id}:
+    get:
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#getPaymentTerminalsTransactionSummariesId
+      operationId: getPaymentTerminalsTransactionSummariesId
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: expand
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: Specifies the ID of the space the operation should be executed
+          in.
+        explode: false
+        in: header
+        name: Space
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaymentTerminalTransactionSummary"
+          description: Successful response.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request was not accepted often due to missing or invalid
+            parameters.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The necessary authentication credentials are missing or incorrect.
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The application user is missing the required permissions.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested resource was not found.
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested response format is not supported.
+        "415":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request provides unsupported or invalid data.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request is well-formed but contains semantic errors. Check
+            the response body for details.
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Too many requests hit the API too quickly.
+        "5XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: An internal error occurred on the server.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Error response.
+      summary: Retrieve a summary
+      tags:
+      - PaymentTerminalTransactionSummaries
+  /payment/terminals/transaction-summaries/{id}/receipt:
+    get:
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#getPaymentTerminalsTransactionSummariesIdReceipt
+      operationId: getPaymentTerminalsTransactionSummariesIdReceipt
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - description: The format specifies how the receipt will be presented in the
+          response.
+        explode: true
+        in: query
+        name: format
+        required: true
+        schema:
+          $ref: "#/components/schemas/TerminalReceiptFormat"
+        style: form
+      - description: "The width defines the dimensions for rendering the document.\
+          \ For PDF format, the width is specified in millimeters, while for text\
+          \ format, it represents the number of characters per line."
+        explode: true
+        in: query
+        name: width
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - description: Specifies the ID of the space the operation should be executed
+          in.
+        explode: false
+        in: header
+        name: Space
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RenderedTerminalTransactionSummary"
+          description: Successful response.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request was not accepted often due to missing or invalid
+            parameters.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The necessary authentication credentials are missing or incorrect.
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The application user is missing the required permissions.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested resource was not found.
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested response format is not supported.
+        "415":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request provides unsupported or invalid data.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request is well-formed but contains semantic errors. Check
+            the response body for details.
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Too many requests hit the API too quickly.
+        "5XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: An internal error occurred on the server.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Error response.
+      summary: Retrieve a rendered summary receipt
+      tags:
+      - PaymentTerminalTransactionSummaries
+  /payment/terminals/transaction-summaries/search:
+    get:
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#getPaymentTerminalsTransactionSummariesSearch
+      operationId: getPaymentTerminalsTransactionSummariesSearch
+      parameters:
+      - explode: true
+        in: query
+        name: expand
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: "A limit on the number of objects to be returned, between 1 and\
+          \ 100. Default is 10."
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      - description: "A cursor for pagination, specifies the number of objects to\
+          \ skip."
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          format: int32
+          maximum: 10000
+          type: integer
+        style: form
+      - description: The fields and order to sort the objects by.
+        explode: true
+        in: query
+        name: order
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The search query to filter the objects by.
+        explode: true
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the ID of the space the operation should be executed
+          in.
+        explode: false
+        in: header
+        name: Space
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Terminal_Transaction_Summary_Search_Response"
+          description: Successful response.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request was not accepted often due to missing or invalid
+            parameters.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The necessary authentication credentials are missing or incorrect.
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The application user is missing the required permissions.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested resource was not found.
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The requested response format is not supported.
+        "415":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request provides unsupported or invalid data.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: The request is well-formed but contains semantic errors. Check
+            the response body for details.
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Too many requests hit the API too quickly.
+        "5XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: An internal error occurred on the server.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestApiErrorResponse"
+          description: Error response.
+      summary: Search summaries
+      tags:
+      - PaymentTerminalTransactionSummaries
   /permissions:
     get:
       externalDocs:
@@ -75221,6 +75724,7 @@ components:
           type: string
         postcode:
           description: "The postal code, also known as ZIP, postcode, etc."
+          maxLength: 12
           readOnly: true
           title: Postcode
           type: string
@@ -75232,12 +75736,13 @@ components:
           type: string
         emailAddress:
           description: The email address.
-          maxLength: 254
+          maxLength: 80
           readOnly: true
           title: Email Address
           type: string
         phoneNumber:
           description: The phone number.
+          maxLength: 20
           readOnly: true
           title: Phone Number
           type: string
@@ -75472,6 +75977,74 @@ components:
       title: Payment Terminal Configuration Version State
       type: string
       x-model-type: ENUM
+    PaymentTerminalDccTransactionSum:
+      description: Represents the aggregated summary of Dynamic Currency Conversion
+        (DCC) transactions grouped by brand and currency combinations in a transaction
+        summary receipt.
+      example:
+        transactionCurrency: transactionCurrency
+        transactionAmount: 4.145608029883936
+        dccAmount: 7.386281948385884
+        id: 1
+        transactionCount: 1
+        dccCurrency: dccCurrency
+        brand: brand
+        version: 1
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#_paymentterminaldcctransactionsum
+      properties:
+        transactionCurrency:
+          description: The original currency of the transactions before DCC conversion
+            (typically the merchant's local currency).
+          readOnly: true
+          title: Transaction Currency
+          type: string
+        transactionAmount:
+          description: The total sum of all transactions in the original transaction
+            currency (the amount in merchant's local currency before DCC conversion).
+          readOnly: true
+          title: Transaction Amount
+          type: number
+        dccAmount:
+          description: The total sum of all transactions in the converted DCC currency
+            (the amount paid by customers in their chosen currency).
+          readOnly: true
+          title: Dcc Amount
+          type: number
+        id:
+          description: A unique identifier for the object.
+          format: int64
+          readOnly: true
+          title: ID
+          type: integer
+        transactionCount:
+          description: The total count of DCC transactions processed for this specific
+            brand and currency combination.
+          format: int32
+          readOnly: true
+          title: Transaction Count
+          type: integer
+        dccCurrency:
+          description: The converted currency used in DCC transactions (the currency
+            chosen by the customer for payment).
+          readOnly: true
+          title: Dcc Currency
+          type: string
+        brand:
+          description: The payment brand for which these DCC transactions are summarized.
+          readOnly: true
+          title: Brand
+          type: string
+        version:
+          description: The version is used for optimistic locking and incremented
+            whenever the object is updated.
+          format: int32
+          readOnly: true
+          title: Version
+          type: integer
+      title: Transaction Summary DCC Sum
+      type: object
+      x-model-type: READ
     PaymentTerminalLocation:
       example:
         linkedSpaceId: 8
@@ -75721,6 +76294,236 @@ components:
       title: Terminal State
       type: string
       x-model-type: ENUM
+    PaymentTerminalTransactionSum:
+      description: "Represents the aggregated transaction data for a specific brand\
+        \ and currency, including regular and DCC (Dynamic Currency Conversion) transactions."
+      example:
+        transactionTipAmount: 1.4658129805029452
+        product: product
+        transactionCurrency: transactionCurrency
+        transactionAmount: 5.962133916683182
+        dccTipAmount: 5.637376656633329
+        id: 2
+        transactionCount: 7
+        brand: brand
+        dccTransactionCount: 9
+        version: 3
+        dccTransactionAmount: 2.027123023002322
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#_paymentterminaltransactionsum
+      properties:
+        transactionTipAmount:
+          description: The total amount of tips from regular (non-DCC) transactions
+            in the transaction currency.
+          readOnly: true
+          title: Transaction Tip Amount
+          type: number
+        product:
+          description: The product within the brand for which transactions are summarized.
+          readOnly: true
+          title: Product
+          type: string
+        transactionCurrency:
+          description: "The base currency in which the transactions were processed\
+            \ and settled, excluding any DCC conversions."
+          readOnly: true
+          title: Transaction Currency
+          type: string
+        transactionAmount:
+          description: "The total monetary value of all transactions in the transaction\
+            \ currency, excluding DCC transactions."
+          readOnly: true
+          title: Transaction Amount
+          type: number
+        dccTipAmount:
+          description: "The total amount of tips from DCC transactions, converted\
+            \ and presented in the transaction currency."
+          readOnly: true
+          title: Dcc Tip Amount
+          type: number
+        id:
+          description: A unique identifier for the object.
+          format: int64
+          readOnly: true
+          title: ID
+          type: integer
+        transactionCount:
+          description: The total count of regular (non-DCC) transactions processed
+            within this summary period.
+          format: int32
+          readOnly: true
+          title: Transaction Count
+          type: integer
+        brand:
+          description: The payment brand for which the transactions are summarized.
+          readOnly: true
+          title: Brand
+          type: string
+        dccTransactionCount:
+          description: "The number of transactions where Dynamic Currency Conversion\
+            \ (DCC) was applied, allowing customers to pay in their home currency."
+          format: int32
+          readOnly: true
+          title: Dcc Transaction Count
+          type: integer
+        version:
+          description: The version is used for optimistic locking and incremented
+            whenever the object is updated.
+          format: int32
+          readOnly: true
+          title: Version
+          type: integer
+        dccTransactionAmount:
+          description: "The total monetary value of DCC transactions, converted and\
+            \ presented in the transaction currency."
+          readOnly: true
+          title: Dcc Transaction Amount
+          type: number
+      title: Terminal Transaction Sum
+      type: object
+      x-model-type: READ
+    PaymentTerminalTransactionSummary:
+      example:
+        reference: 0
+        linkedSpaceId: 6
+        transactionSums:
+        - transactionTipAmount: 1.4658129805029452
+          product: product
+          transactionCurrency: transactionCurrency
+          transactionAmount: 5.962133916683182
+          dccTipAmount: 5.637376656633329
+          id: 2
+          transactionCount: 7
+          brand: brand
+          dccTransactionCount: 9
+          version: 3
+          dccTransactionAmount: 2.027123023002322
+        - transactionTipAmount: 1.4658129805029452
+          product: product
+          transactionCurrency: transactionCurrency
+          transactionAmount: 5.962133916683182
+          dccTipAmount: 5.637376656633329
+          id: 2
+          transactionCount: 7
+          brand: brand
+          dccTransactionCount: 9
+          version: 3
+          dccTransactionAmount: 2.027123023002322
+        dccTransactionSums:
+        - transactionCurrency: transactionCurrency
+          transactionAmount: 4.145608029883936
+          dccAmount: 7.386281948385884
+          id: 1
+          transactionCount: 1
+          dccCurrency: dccCurrency
+          brand: brand
+          version: 1
+        - transactionCurrency: transactionCurrency
+          transactionAmount: 4.145608029883936
+          dccAmount: 7.386281948385884
+          id: 1
+          transactionCount: 1
+          dccCurrency: dccCurrency
+          brand: brand
+          version: 1
+        endedOn: 2000-01-23T04:56:07.000+00:00
+        balanceAmountPerCurrency:
+          key: 6.84685269835264
+        paymentTerminal: 7
+        receipt: receipt
+        id: 1
+        numberOfTransactions: 4
+        startedOn: 2000-01-23T04:56:07.000+00:00
+        version: 5
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#_paymentterminaltransactionsummary
+      properties:
+        reference:
+          description: The unique reference assigned to this transaction summary.
+          format: int64
+          readOnly: true
+          title: Reference
+          type: integer
+        linkedSpaceId:
+          description: The ID of the space this object belongs to.
+          format: int64
+          readOnly: true
+          title: Linked Space ID
+          type: integer
+        transactionSums:
+          description: "The total monetary amounts of all transactions, organized\
+            \ and grouped by brand and currency."
+          items:
+            $ref: "#/components/schemas/PaymentTerminalTransactionSum"
+          readOnly: true
+          title: Transaction Sums
+          type: array
+        dccTransactionSums:
+          description: "Detailed breakdown of Dynamic Currency Conversion (DCC) transactions,\
+            \ showing transaction amounts in both original and converted currencies,\
+            \ grouped by payment brand."
+          items:
+            $ref: "#/components/schemas/PaymentTerminalDccTransactionSum"
+          readOnly: true
+          title: Dcc Transaction Sums
+          type: array
+        endedOn:
+          description: The end of the time period covered by this summary report.
+          format: date-time
+          readOnly: true
+          title: Ended On
+          type: string
+        balanceAmountPerCurrency:
+          additionalProperties:
+            type: number
+          description: The overall transaction volume in each processed currency.
+          readOnly: true
+          title: Balance Amount Per Currency
+          type: object
+        paymentTerminal:
+          description: The payment terminal that processed the transactions included
+            in this summary report.
+          format: int64
+          readOnly: true
+          title: Payment Terminal
+          type: integer
+        receipt:
+          description: The HTML content of the transaction summary receipt.
+          readOnly: true
+          title: Receipt
+          type: string
+        id:
+          description: A unique identifier for the object.
+          format: int64
+          readOnly: true
+          title: ID
+          type: integer
+        numberOfTransactions:
+          description: The total count of all transactions processed by the terminal
+            during the summary period.
+          format: int32
+          readOnly: true
+          title: Number Of Transactions
+          type: integer
+        startedOn:
+          description: The beginning of the time period covered by this summary report.
+          format: date-time
+          readOnly: true
+          title: Started On
+          type: string
+        version:
+          description: The version is used for optimistic locking and incremented
+            whenever the object is updated.
+          format: int32
+          readOnly: true
+          title: Version
+          type: integer
+      title: Terminal Transaction Summary
+      type: object
+      x-expandable-fields:
+      - dccTransactionSums
+      - transactionSums
+      x-model-type: READ
     PaymentTerminalTransactionSummaryReference:
       example:
         linkedSpaceId: 0
@@ -80893,6 +81696,29 @@ components:
           title: MIME Type
           type: string
       title: Rendered Terminal Receipt
+      type: object
+      x-model-type: READ
+    RenderedTerminalTransactionSummary:
+      example:
+        data: data
+        mimeType: mimeType
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#_renderedterminaltransactionsummary
+      properties:
+        data:
+          description: The data property contains the binary data of the receipt document
+            encoded as base 64 encoded string.
+          format: byte
+          readOnly: true
+          title: Data
+          type: string
+        mimeType:
+          description: The mime type indicates the format of the receipt document.
+            The mime type depends on the requested receipt format.
+          readOnly: true
+          title: Mime Type
+          type: string
+      title: Rendered Terminal Transaction Summary
       type: object
       x-model-type: READ
     RestAddressFormat:
@@ -86709,19 +87535,46 @@ components:
       x-model-type: ENUM
     SubscriptionUpdateRequest:
       example:
-        description: description
+        componentConfigurations:
+        - quantity: 0.8008281904610115
+          productComponentReferenceId: 6
+        - quantity: 0.8008281904610115
+          productComponentReferenceId: 6
+        product: 0
+        currency: currency
+        respectTerminationPeriod: true
       externalDocs:
         url: https://gateway.vr-payment.de/doc/api/web-service#_subscriptionupdaterequest
       properties:
-        description:
-          description: A description used to identify the subscription.
-          maxLength: 200
+        componentConfigurations:
+          description: The configurations of the subscription's components.
+          items:
+            $ref: "#/components/schemas/SubscriptionComponentReferenceConfiguration"
           readOnly: false
-          title: Description
+          title: Component Configurations
+          type: array
+          uniqueItems: true
+        product:
+          description: The product to subscribe to.
+          format: int64
+          readOnly: false
+          title: Product
+          type: integer
+        currency:
+          description: The three-letter code (ISO 4217 format) of the currency used
+            to invoice the customer. Must be one of the currencies supported by the
+            product.
+          readOnly: false
+          title: Currency
           type: string
+        respectTerminationPeriod:
+          description: Whether the subscriptions' termination periods should be respected.
+          readOnly: false
+          title: Respect Termination Period
+          type: boolean
       title: Subscription Update Request
       type: object
-      x-model-type: UPDATE
+      x-model-type: CREATE
     SubscriptionVersion:
       example:
         plannedPurgeDate: 2000-01-23T04:56:07.000+00:00
@@ -142873,6 +143726,275 @@ components:
           title: Limit
           type: integer
       title: Terminal Search Response
+      type: object
+    Terminal_Transaction_Summary_List_Response:
+      example:
+        data:
+        - reference: 0
+          linkedSpaceId: 6
+          transactionSums:
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          dccTransactionSums:
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          endedOn: 2000-01-23T04:56:07.000+00:00
+          balanceAmountPerCurrency:
+            key: 6.84685269835264
+          paymentTerminal: 7
+          receipt: receipt
+          id: 1
+          numberOfTransactions: 4
+          startedOn: 2000-01-23T04:56:07.000+00:00
+          version: 5
+        - reference: 0
+          linkedSpaceId: 6
+          transactionSums:
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          dccTransactionSums:
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          endedOn: 2000-01-23T04:56:07.000+00:00
+          balanceAmountPerCurrency:
+            key: 6.84685269835264
+          paymentTerminal: 7
+          receipt: receipt
+          id: 1
+          numberOfTransactions: 4
+          startedOn: 2000-01-23T04:56:07.000+00:00
+          version: 5
+        hasMore: true
+        limit: 9
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#_listresponse
+      properties:
+        data:
+          description: An array containing the actual response objects.
+          items:
+            $ref: "#/components/schemas/PaymentTerminalTransactionSummary"
+          readOnly: true
+          title: Data
+          type: array
+        hasMore:
+          description: "Whether there are more objects available after this set. If\
+            \ false, there are no more objects to retrieve."
+          readOnly: true
+          title: Has More
+          type: boolean
+        limit:
+          description: The applied limit on the number of objects returned.
+          format: int32
+          readOnly: true
+          title: Limit
+          type: integer
+      title: Terminal Transaction Summary List Response
+      type: object
+    Terminal_Transaction_Summary_Search_Response:
+      example:
+        data:
+        - reference: 0
+          linkedSpaceId: 6
+          transactionSums:
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          dccTransactionSums:
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          endedOn: 2000-01-23T04:56:07.000+00:00
+          balanceAmountPerCurrency:
+            key: 6.84685269835264
+          paymentTerminal: 7
+          receipt: receipt
+          id: 1
+          numberOfTransactions: 4
+          startedOn: 2000-01-23T04:56:07.000+00:00
+          version: 5
+        - reference: 0
+          linkedSpaceId: 6
+          transactionSums:
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          - transactionTipAmount: 1.4658129805029452
+            product: product
+            transactionCurrency: transactionCurrency
+            transactionAmount: 5.962133916683182
+            dccTipAmount: 5.637376656633329
+            id: 2
+            transactionCount: 7
+            brand: brand
+            dccTransactionCount: 9
+            version: 3
+            dccTransactionAmount: 2.027123023002322
+          dccTransactionSums:
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          - transactionCurrency: transactionCurrency
+            transactionAmount: 4.145608029883936
+            dccAmount: 7.386281948385884
+            id: 1
+            transactionCount: 1
+            dccCurrency: dccCurrency
+            brand: brand
+            version: 1
+          endedOn: 2000-01-23T04:56:07.000+00:00
+          balanceAmountPerCurrency:
+            key: 6.84685269835264
+          paymentTerminal: 7
+          receipt: receipt
+          id: 1
+          numberOfTransactions: 4
+          startedOn: 2000-01-23T04:56:07.000+00:00
+          version: 5
+        offset: 0
+        hasMore: true
+        limit: 6
+      externalDocs:
+        url: https://gateway.vr-payment.de/doc/api/web-service#_searchresponse
+      properties:
+        data:
+          description: An array containing the actual response objects.
+          items:
+            $ref: "#/components/schemas/PaymentTerminalTransactionSummary"
+          readOnly: true
+          title: Data
+          type: array
+        offset:
+          description: The number of skipped objects.
+          format: int32
+          readOnly: true
+          title: Offset
+          type: integer
+        hasMore:
+          description: "Whether there are more objects available after this set. If\
+            \ false, there are no more objects to retrieve."
+          readOnly: true
+          title: Has More
+          type: boolean
+        limit:
+          description: The applied limit on the number of objects returned.
+          format: int32
+          readOnly: true
+          title: Limit
+          type: integer
+      title: Terminal Transaction Summary Search Response
       type: object
     Permission_List_Response:
       example:
