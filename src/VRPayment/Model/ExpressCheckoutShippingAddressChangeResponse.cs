@@ -38,52 +38,47 @@ using OpenAPIDateConverter = VRPayment.Client.OpenAPIDateConverter;
 namespace VRPayment.Model
 {
     /// <summary>
-    /// ExpressCheckoutSessionCreate
+    /// ExpressCheckoutShippingAddressChangeResponse
     /// </summary>
-    [DataContract(Name = "ExpressCheckoutSession.Create")]
-    public partial class ExpressCheckoutSessionCreate : IValidatableObject
+    [DataContract(Name = "ExpressCheckoutShippingAddressChangeResponse")]
+    public partial class ExpressCheckoutShippingAddressChangeResponse : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExpressCheckoutSessionCreate" /> class.
+        /// Initializes a new instance of the <see cref="ExpressCheckoutShippingAddressChangeResponse" /> class.
         /// </summary>
-        /// <param name="lineItems">lineItems.</param>
-        /// <param name="merchantShippingCallbackUrl">The URL to fetch the shipping options from..</param>
-        /// <param name="currency">The currency of the session..</param>
-        /// <param name="shippingOptions">shippingOptions.</param>
-        public ExpressCheckoutSessionCreate(List<LineItem> lineItems = default, string merchantShippingCallbackUrl = default, string currency = default, List<ExpressCheckoutShippingOption> shippingOptions = default)
+        [JsonConstructorAttribute]
+        public ExpressCheckoutShippingAddressChangeResponse()
         {
-            this.LineItems = lineItems;
-            this.MerchantShippingCallbackUrl = merchantShippingCallbackUrl;
-            this.Currency = currency;
-            this.ShippingOptions = shippingOptions;
         }
 
         /// <summary>
-        /// Gets or Sets LineItems
+        /// Gets or Sets OrderTotal
         /// </summary>
-        [DataMember(Name = "lineItems", EmitDefaultValue = false)]
-        public List<LineItem> LineItems { get; set; }
+        [DataMember(Name = "orderTotal", EmitDefaultValue = false)]
+        public decimal OrderTotal { get; private set; }
 
         /// <summary>
-        /// The URL to fetch the shipping options from.
+        /// Returns false as OrderTotal should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>The URL to fetch the shipping options from.</value>
-        [DataMember(Name = "merchantShippingCallbackUrl", EmitDefaultValue = false)]
-        public string MerchantShippingCallbackUrl { get; set; }
-
-        /// <summary>
-        /// The currency of the session.
-        /// </summary>
-        /// <value>The currency of the session.</value>
-        [DataMember(Name = "currency", EmitDefaultValue = false)]
-        public string Currency { get; set; }
-
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOrderTotal()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets ShippingOptions
         /// </summary>
         [DataMember(Name = "shippingOptions", EmitDefaultValue = false)]
-        public List<ExpressCheckoutShippingOption> ShippingOptions { get; set; }
+        public List<ExpressCheckoutShippingOption> ShippingOptions { get; private set; }
 
+        /// <summary>
+        /// Returns false as ShippingOptions should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeShippingOptions()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -91,10 +86,8 @@ namespace VRPayment.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ExpressCheckoutSessionCreate {\n");
-            sb.Append("  LineItems: ").Append(LineItems).Append("\n");
-            sb.Append("  MerchantShippingCallbackUrl: ").Append(MerchantShippingCallbackUrl).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("class ExpressCheckoutShippingAddressChangeResponse {\n");
+            sb.Append("  OrderTotal: ").Append(OrderTotal).Append("\n");
             sb.Append("  ShippingOptions: ").Append(ShippingOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

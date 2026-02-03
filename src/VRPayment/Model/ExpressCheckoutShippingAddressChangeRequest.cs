@@ -38,51 +38,33 @@ using OpenAPIDateConverter = VRPayment.Client.OpenAPIDateConverter;
 namespace VRPayment.Model
 {
     /// <summary>
-    /// ExpressCheckoutSessionCreate
+    /// ExpressCheckoutShippingAddressChangeRequest
     /// </summary>
-    [DataContract(Name = "ExpressCheckoutSession.Create")]
-    public partial class ExpressCheckoutSessionCreate : IValidatableObject
+    [DataContract(Name = "ExpressCheckoutShippingAddressChangeRequest")]
+    public partial class ExpressCheckoutShippingAddressChangeRequest : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExpressCheckoutSessionCreate" /> class.
+        /// Initializes a new instance of the <see cref="ExpressCheckoutShippingAddressChangeRequest" /> class.
         /// </summary>
-        /// <param name="lineItems">lineItems.</param>
-        /// <param name="merchantShippingCallbackUrl">The URL to fetch the shipping options from..</param>
-        /// <param name="currency">The currency of the session..</param>
-        /// <param name="shippingOptions">shippingOptions.</param>
-        public ExpressCheckoutSessionCreate(List<LineItem> lineItems = default, string merchantShippingCallbackUrl = default, string currency = default, List<ExpressCheckoutShippingOption> shippingOptions = default)
+        /// <param name="shippingAddress">shippingAddress.</param>
+        /// <param name="billingAddress">billingAddress.</param>
+        public ExpressCheckoutShippingAddressChangeRequest(Address shippingAddress = default, Address billingAddress = default)
         {
-            this.LineItems = lineItems;
-            this.MerchantShippingCallbackUrl = merchantShippingCallbackUrl;
-            this.Currency = currency;
-            this.ShippingOptions = shippingOptions;
+            this.ShippingAddress = shippingAddress;
+            this.BillingAddress = billingAddress;
         }
 
         /// <summary>
-        /// Gets or Sets LineItems
+        /// Gets or Sets ShippingAddress
         /// </summary>
-        [DataMember(Name = "lineItems", EmitDefaultValue = false)]
-        public List<LineItem> LineItems { get; set; }
+        [DataMember(Name = "shippingAddress", EmitDefaultValue = false)]
+        public Address ShippingAddress { get; set; }
 
         /// <summary>
-        /// The URL to fetch the shipping options from.
+        /// Gets or Sets BillingAddress
         /// </summary>
-        /// <value>The URL to fetch the shipping options from.</value>
-        [DataMember(Name = "merchantShippingCallbackUrl", EmitDefaultValue = false)]
-        public string MerchantShippingCallbackUrl { get; set; }
-
-        /// <summary>
-        /// The currency of the session.
-        /// </summary>
-        /// <value>The currency of the session.</value>
-        [DataMember(Name = "currency", EmitDefaultValue = false)]
-        public string Currency { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ShippingOptions
-        /// </summary>
-        [DataMember(Name = "shippingOptions", EmitDefaultValue = false)]
-        public List<ExpressCheckoutShippingOption> ShippingOptions { get; set; }
+        [DataMember(Name = "billingAddress", EmitDefaultValue = false)]
+        public Address BillingAddress { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,11 +73,9 @@ namespace VRPayment.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ExpressCheckoutSessionCreate {\n");
-            sb.Append("  LineItems: ").Append(LineItems).Append("\n");
-            sb.Append("  MerchantShippingCallbackUrl: ").Append(MerchantShippingCallbackUrl).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  ShippingOptions: ").Append(ShippingOptions).Append("\n");
+            sb.Append("class ExpressCheckoutShippingAddressChangeRequest {\n");
+            sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
+            sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

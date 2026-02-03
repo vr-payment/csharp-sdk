@@ -38,52 +38,49 @@ using OpenAPIDateConverter = VRPayment.Client.OpenAPIDateConverter;
 namespace VRPayment.Model
 {
     /// <summary>
-    /// ExpressCheckoutSessionCreate
+    /// BogusExpressCheckoutPaymentData
     /// </summary>
-    [DataContract(Name = "ExpressCheckoutSession.Create")]
-    public partial class ExpressCheckoutSessionCreate : IValidatableObject
+    [DataContract(Name = "BogusExpressCheckoutPaymentData")]
+    public partial class BogusExpressCheckoutPaymentData : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExpressCheckoutSessionCreate" /> class.
+        /// Initializes a new instance of the <see cref="BogusExpressCheckoutPaymentData" /> class.
         /// </summary>
-        /// <param name="lineItems">lineItems.</param>
-        /// <param name="merchantShippingCallbackUrl">The URL to fetch the shipping options from..</param>
-        /// <param name="currency">The currency of the session..</param>
-        /// <param name="shippingOptions">shippingOptions.</param>
-        public ExpressCheckoutSessionCreate(List<LineItem> lineItems = default, string merchantShippingCallbackUrl = default, string currency = default, List<ExpressCheckoutShippingOption> shippingOptions = default)
+        [JsonConstructorAttribute]
+        public BogusExpressCheckoutPaymentData()
         {
-            this.LineItems = lineItems;
-            this.MerchantShippingCallbackUrl = merchantShippingCallbackUrl;
-            this.Currency = currency;
-            this.ShippingOptions = shippingOptions;
         }
 
         /// <summary>
-        /// Gets or Sets LineItems
+        /// Wallet-generated payment token collected during approval.
         /// </summary>
-        [DataMember(Name = "lineItems", EmitDefaultValue = false)]
-        public List<LineItem> LineItems { get; set; }
+        /// <value>Wallet-generated payment token collected during approval.</value>
+        [DataMember(Name = "paymentToken", EmitDefaultValue = false)]
+        public string PaymentToken { get; private set; }
 
         /// <summary>
-        /// The URL to fetch the shipping options from.
+        /// Returns false as PaymentToken should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>The URL to fetch the shipping options from.</value>
-        [DataMember(Name = "merchantShippingCallbackUrl", EmitDefaultValue = false)]
-        public string MerchantShippingCallbackUrl { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializePaymentToken()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Wallet-generated cryptogram collected during approval.
+        /// </summary>
+        /// <value>Wallet-generated cryptogram collected during approval.</value>
+        [DataMember(Name = "cryptogram", EmitDefaultValue = false)]
+        public string Cryptogram { get; private set; }
 
         /// <summary>
-        /// The currency of the session.
+        /// Returns false as Cryptogram should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>The currency of the session.</value>
-        [DataMember(Name = "currency", EmitDefaultValue = false)]
-        public string Currency { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ShippingOptions
-        /// </summary>
-        [DataMember(Name = "shippingOptions", EmitDefaultValue = false)]
-        public List<ExpressCheckoutShippingOption> ShippingOptions { get; set; }
-
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCryptogram()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -91,11 +88,9 @@ namespace VRPayment.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ExpressCheckoutSessionCreate {\n");
-            sb.Append("  LineItems: ").Append(LineItems).Append("\n");
-            sb.Append("  MerchantShippingCallbackUrl: ").Append(MerchantShippingCallbackUrl).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  ShippingOptions: ").Append(ShippingOptions).Append("\n");
+            sb.Append("class BogusExpressCheckoutPaymentData {\n");
+            sb.Append("  PaymentToken: ").Append(PaymentToken).Append("\n");
+            sb.Append("  Cryptogram: ").Append(Cryptogram).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -38,52 +38,54 @@ using OpenAPIDateConverter = VRPayment.Client.OpenAPIDateConverter;
 namespace VRPayment.Model
 {
     /// <summary>
-    /// ExpressCheckoutSessionCreate
+    /// ExpressCheckoutApprovalResponse
     /// </summary>
-    [DataContract(Name = "ExpressCheckoutSession.Create")]
-    public partial class ExpressCheckoutSessionCreate : IValidatableObject
+    [DataContract(Name = "ExpressCheckoutApprovalResponse")]
+    public partial class ExpressCheckoutApprovalResponse : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExpressCheckoutSessionCreate" /> class.
+        /// Gets or Sets State
         /// </summary>
-        /// <param name="lineItems">lineItems.</param>
-        /// <param name="merchantShippingCallbackUrl">The URL to fetch the shipping options from..</param>
-        /// <param name="currency">The currency of the session..</param>
-        /// <param name="shippingOptions">shippingOptions.</param>
-        public ExpressCheckoutSessionCreate(List<LineItem> lineItems = default, string merchantShippingCallbackUrl = default, string currency = default, List<ExpressCheckoutShippingOption> shippingOptions = default)
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public ExpressCheckoutSessionState? State { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExpressCheckoutApprovalResponse" /> class.
+        /// </summary>
+        /// <param name="state">state.</param>
+        public ExpressCheckoutApprovalResponse(ExpressCheckoutSessionState? state = default)
         {
-            this.LineItems = lineItems;
-            this.MerchantShippingCallbackUrl = merchantShippingCallbackUrl;
-            this.Currency = currency;
-            this.ShippingOptions = shippingOptions;
+            this.State = state;
         }
 
         /// <summary>
-        /// Gets or Sets LineItems
+        /// Gets or Sets MerchantRedirectUrl
         /// </summary>
-        [DataMember(Name = "lineItems", EmitDefaultValue = false)]
-        public List<LineItem> LineItems { get; set; }
+        [DataMember(Name = "merchantRedirectUrl", EmitDefaultValue = false)]
+        public string MerchantRedirectUrl { get; private set; }
 
         /// <summary>
-        /// The URL to fetch the shipping options from.
+        /// Returns false as MerchantRedirectUrl should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>The URL to fetch the shipping options from.</value>
-        [DataMember(Name = "merchantShippingCallbackUrl", EmitDefaultValue = false)]
-        public string MerchantShippingCallbackUrl { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeMerchantRedirectUrl()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Gets or Sets SessionId
+        /// </summary>
+        [DataMember(Name = "sessionId", EmitDefaultValue = false)]
+        public long SessionId { get; private set; }
 
         /// <summary>
-        /// The currency of the session.
+        /// Returns false as SessionId should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>The currency of the session.</value>
-        [DataMember(Name = "currency", EmitDefaultValue = false)]
-        public string Currency { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ShippingOptions
-        /// </summary>
-        [DataMember(Name = "shippingOptions", EmitDefaultValue = false)]
-        public List<ExpressCheckoutShippingOption> ShippingOptions { get; set; }
-
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSessionId()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -91,11 +93,10 @@ namespace VRPayment.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ExpressCheckoutSessionCreate {\n");
-            sb.Append("  LineItems: ").Append(LineItems).Append("\n");
-            sb.Append("  MerchantShippingCallbackUrl: ").Append(MerchantShippingCallbackUrl).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  ShippingOptions: ").Append(ShippingOptions).Append("\n");
+            sb.Append("class ExpressCheckoutApprovalResponse {\n");
+            sb.Append("  MerchantRedirectUrl: ").Append(MerchantRedirectUrl).Append("\n");
+            sb.Append("  SessionId: ").Append(SessionId).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
