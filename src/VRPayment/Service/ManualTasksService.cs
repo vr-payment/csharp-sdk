@@ -328,7 +328,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "ManualTasksService.GetManualTasks";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -404,7 +404,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "ManualTasksService.GetManualTasksId";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -475,7 +475,7 @@ namespace VRPayment.Service
             }
 
             localVarRequestOptions.PathParameters.Add("id", VRPayment.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "ManualTasksService.GetManualTasksIdNotification";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -572,7 +572,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "query", query));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "ManualTasksService.GetManualTasksSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -644,7 +644,7 @@ namespace VRPayment.Service
 
             localVarRequestOptions.PathParameters.Add("id", VRPayment.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.PathParameters.Add("actionId", VRPayment.Client.ClientUtils.ParameterToString(actionId)); // path parameter
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "ManualTasksService.PostManualTasksIdActionActionId";
             localVarRequestOptions.OperationIndex = operationIndex;

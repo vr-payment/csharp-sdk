@@ -308,7 +308,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "PaymentTerminalTransactionSummariesService.GetPaymentTerminalsTransactionSummaries";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -384,7 +384,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "PaymentTerminalTransactionSummariesService.GetPaymentTerminalsTransactionSummariesId";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -460,7 +460,7 @@ namespace VRPayment.Service
             localVarRequestOptions.PathParameters.Add("id", VRPayment.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "format", format));
             localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "width", width));
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "PaymentTerminalTransactionSummariesService.GetPaymentTerminalsTransactionSummariesIdReceipt";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -557,7 +557,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "query", query));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "PaymentTerminalTransactionSummariesService.GetPaymentTerminalsTransactionSummariesSearch";
             localVarRequestOptions.OperationIndex = operationIndex;

@@ -389,7 +389,7 @@ namespace VRPayment.Service
 
             localVarRequestOptions.PathParameters.Add("transactionId", VRPayment.Client.ClientUtils.ParameterToString(transactionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", VRPayment.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "TransactionCommentsService.DeletePaymentTransactionsTransactionIdCommentsId";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -489,7 +489,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "TransactionCommentsService.GetPaymentTransactionsTransactionIdComments";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -568,7 +568,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "TransactionCommentsService.GetPaymentTransactionsTransactionIdCommentsId";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -668,7 +668,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "query", query));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "TransactionCommentsService.GetPaymentTransactionsTransactionIdCommentsSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -756,7 +756,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
             localVarRequestOptions.Data = transactionCommentActive;
 
             localVarRequestOptions.Operation = "TransactionCommentsService.PatchPaymentTransactionsTransactionIdCommentsId";
@@ -842,7 +842,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
             localVarRequestOptions.Data = transactionCommentCreate;
 
             localVarRequestOptions.Operation = "TransactionCommentsService.PostPaymentTransactionsTransactionIdComments";
@@ -915,7 +915,7 @@ namespace VRPayment.Service
 
             localVarRequestOptions.PathParameters.Add("transactionId", VRPayment.Client.ClientUtils.ParameterToString(transactionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", VRPayment.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "TransactionCommentsService.PostPaymentTransactionsTransactionIdCommentsIdPin";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -987,7 +987,7 @@ namespace VRPayment.Service
 
             localVarRequestOptions.PathParameters.Add("transactionId", VRPayment.Client.ClientUtils.ParameterToString(transactionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", VRPayment.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "TransactionCommentsService.PostPaymentTransactionsTransactionIdCommentsIdUnpin";
             localVarRequestOptions.OperationIndex = operationIndex;

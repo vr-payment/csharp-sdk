@@ -167,11 +167,12 @@ namespace VRPayment.Service
         /// Create an account
         /// </summary>
         /// <exception cref="VRPayment.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountCreate"></param>
+        /// <param name="account">Specifies the ID of the account the operation should be executed in.</param>
+        /// <param name="accountCreateWithOwner"></param>
         /// <param name="expand"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Account</returns>
-        Account PostAccounts(AccountCreate accountCreate, List<string>? expand = default, int operationIndex = 0);
+        Account PostAccounts(long account, AccountCreateWithOwner accountCreateWithOwner, List<string>? expand = default, int operationIndex = 0);
 
         /// <summary>
         /// Create an account
@@ -180,11 +181,12 @@ namespace VRPayment.Service
         /// 
         /// </remarks>
         /// <exception cref="VRPayment.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountCreate"></param>
+        /// <param name="account">Specifies the ID of the account the operation should be executed in.</param>
+        /// <param name="accountCreateWithOwner"></param>
         /// <param name="expand"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Account</returns>
-        ApiResponse<Account> PostAccountsWithHttpInfo(AccountCreate accountCreate, List<string>? expand = default, int operationIndex = 0);
+        ApiResponse<Account> PostAccountsWithHttpInfo(long account, AccountCreateWithOwner accountCreateWithOwner, List<string>? expand = default, int operationIndex = 0);
         /// <summary>
         /// Activate an account
         /// </summary>
@@ -724,13 +726,14 @@ namespace VRPayment.Service
         /// Create an account 
         /// </summary>
         /// <exception cref="VRPayment.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountCreate"></param>
+        /// <param name="account">Specifies the ID of the account the operation should be executed in.</param>
+        /// <param name="accountCreateWithOwner"></param>
         /// <param name="expand"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Account</returns>
-        public Account PostAccounts(AccountCreate accountCreate, List<string>? expand = default, int operationIndex = 0)
+        public Account PostAccounts(long account, AccountCreateWithOwner accountCreateWithOwner, List<string>? expand = default, int operationIndex = 0)
         {
-            VRPayment.Client.ApiResponse<Account> localVarResponse = PostAccountsWithHttpInfo(accountCreate, expand);
+            VRPayment.Client.ApiResponse<Account> localVarResponse = PostAccountsWithHttpInfo(account, accountCreateWithOwner, expand);
             return localVarResponse.Data;
         }
 
@@ -738,16 +741,17 @@ namespace VRPayment.Service
         /// Create an account 
         /// </summary>
         /// <exception cref="VRPayment.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountCreate"></param>
+        /// <param name="account">Specifies the ID of the account the operation should be executed in.</param>
+        /// <param name="accountCreateWithOwner"></param>
         /// <param name="expand"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Account</returns>
-        public VRPayment.Client.ApiResponse<Account> PostAccountsWithHttpInfo(AccountCreate accountCreate, List<string>? expand = default, int operationIndex = 0)
+        public VRPayment.Client.ApiResponse<Account> PostAccountsWithHttpInfo(long account, AccountCreateWithOwner accountCreateWithOwner, List<string>? expand = default, int operationIndex = 0)
         {
-            // verify the required parameter 'accountCreate' is set
-            if (accountCreate == null)
+            // verify the required parameter 'accountCreateWithOwner' is set
+            if (accountCreateWithOwner == null)
             {
-                throw new VRPayment.Client.ApiException(400, "Missing required parameter 'accountCreate' when calling AccountsService->PostAccounts");
+                throw new VRPayment.Client.ApiException(400, "Missing required parameter 'accountCreateWithOwner' when calling AccountsService->PostAccounts");
             }
 
             VRPayment.Client.RequestOptions localVarRequestOptions = new VRPayment.Client.RequestOptions();
@@ -778,7 +782,8 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.Data = accountCreate;
+            localVarRequestOptions.HeaderParameters.Add("account", VRPayment.Client.ClientUtils.ParameterToString(account)); // header parameter
+            localVarRequestOptions.Data = accountCreateWithOwner;
 
             localVarRequestOptions.Operation = "AccountsService.PostAccounts";
             localVarRequestOptions.OperationIndex = operationIndex;

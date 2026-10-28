@@ -282,7 +282,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "SubscriptionProductVersionRetirementsService.GetSubscriptionsProductsVersionsRetirements";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -358,7 +358,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "SubscriptionProductVersionRetirementsService.GetSubscriptionsProductsVersionsRetirementsId";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -455,7 +455,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "query", query));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "SubscriptionProductVersionRetirementsService.GetSubscriptionsProductsVersionsRetirementsSearch";
             localVarRequestOptions.OperationIndex = operationIndex;

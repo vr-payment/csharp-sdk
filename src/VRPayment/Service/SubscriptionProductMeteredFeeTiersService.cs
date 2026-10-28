@@ -341,7 +341,7 @@ namespace VRPayment.Service
 
             localVarRequestOptions.PathParameters.Add("feeId", VRPayment.Client.ClientUtils.ParameterToString(feeId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", VRPayment.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "SubscriptionProductMeteredFeeTiersService.DeleteSubscriptionsProductsMeteredFeesFeeIdTiersId";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -441,7 +441,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "SubscriptionProductMeteredFeeTiersService.GetSubscriptionsProductsMeteredFeesFeeIdTiers";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -520,7 +520,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "SubscriptionProductMeteredFeeTiersService.GetSubscriptionsProductsMeteredFeesFeeIdTiersId";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -620,7 +620,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("", "query", query));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
 
             localVarRequestOptions.Operation = "SubscriptionProductMeteredFeeTiersService.GetSubscriptionsProductsMeteredFeesFeeIdTiersSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -708,7 +708,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
             localVarRequestOptions.Data = productMeteredTierFeeUpdate;
 
             localVarRequestOptions.Operation = "SubscriptionProductMeteredFeeTiersService.PatchSubscriptionsProductsMeteredFeesFeeIdTiersId";
@@ -794,7 +794,7 @@ namespace VRPayment.Service
             {
                 localVarRequestOptions.QueryParameters.Add(VRPayment.Client.ClientUtils.ParameterToMultiMap("multi", "expand", expand));
             }
-            localVarRequestOptions.HeaderParameters.Add("Space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("space", VRPayment.Client.ClientUtils.ParameterToString(space)); // header parameter
             localVarRequestOptions.Data = productMeteredTierFeeUpdate;
 
             localVarRequestOptions.Operation = "SubscriptionProductMeteredFeeTiersService.PostSubscriptionsProductsMeteredFeesFeeIdTiers";
